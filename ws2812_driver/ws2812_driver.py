@@ -62,10 +62,8 @@ class Ws2812Driver:
             for num in '{0:08b}'.format(i):
                 add_string = '100' if num == '0' else '110'
                 bin_string = bin_string + add_string
-                print(bin_string)
                 new_string = bin_string[16:] + bin_string[8:16] + bin_string[:8]
             table[i] = struct.pack('L', int(new_string, 2))[:-1]
-            print(table[i])
 
         return table
 
